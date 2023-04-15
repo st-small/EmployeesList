@@ -161,7 +161,7 @@ struct AddEmployeeView_Previews: PreviewProvider {
             salary: .constant(151515),
             department: .constant(""),
             addEmployeeAction: .unavailable,
-            onCancel: { _ in }
+            onCancel: .init(action: { _ in })
         )
     }
 }

@@ -27,6 +27,8 @@
 		52F725BC29E98D81000B3D25 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F725BB29E98D81000B3D25 /* Employee.swift */; };
 		52F725BE29E98DA6000B3D25 /* AllEmployees.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F725BD29E98DA6000B3D25 /* AllEmployees.swift */; };
 		52F725C029E99095000B3D25 /* EmployeeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F725BF29E99095000B3D25 /* EmployeeRow.swift */; };
+		52F725C229E9B39E000B3D25 /* EmployeesPersistanceOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F725C129E9B39E000B3D25 /* EmployeesPersistanceOperator.swift */; };
+		52F725C529EADE3D000B3D25 /* Department.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F725C429EADE3D000B3D25 /* Department.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,9 @@
 		52F725BB29E98D81000B3D25 /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		52F725BD29E98DA6000B3D25 /* AllEmployees.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllEmployees.swift; sourceTree = "<group>"; };
 		52F725BF29E99095000B3D25 /* EmployeeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeRow.swift; sourceTree = "<group>"; };
+		52F725C129E9B39E000B3D25 /* EmployeesPersistanceOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesPersistanceOperator.swift; sourceTree = "<group>"; };
+		52F725C329E9CFAE000B3D25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		52F725C429EADE3D000B3D25 /* Department.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Department.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +88,7 @@
 		5212908D29E84F5F00899D74 /* EmployeeList */ = {
 			isa = PBXGroup;
 			children = (
+				52F725C329E9CFAE000B3D25 /* Info.plist */,
 				52F725BA29E98D76000B3D25 /* Models */,
 				52F725AB29E87382000B3D25 /* App */,
 				52F725A229E86214000B3D25 /* Helpers */,
@@ -174,6 +180,7 @@
 		52F725B429E95962000B3D25 /* Operators */ = {
 			isa = PBXGroup;
 			children = (
+				52F725C129E9B39E000B3D25 /* EmployeesPersistanceOperator.swift */,
 			);
 			path = Operators;
 			sourceTree = "<group>";
@@ -191,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				52F725BB29E98D81000B3D25 /* Employee.swift */,
+				52F725C429EADE3D000B3D25 /* Department.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -272,6 +280,7 @@
 				52F725C029E99095000B3D25 /* EmployeeRow.swift in Sources */,
 				52F725A129E86193000B3D25 /* Observer.swift in Sources */,
 				52F725A829E86776000B3D25 /* Command.swift in Sources */,
+				52F725C529EADE3D000B3D25 /* Department.swift in Sources */,
 				5212908F29E84F5F00899D74 /* EmployeeListApp.swift in Sources */,
 				52F725B329E95931000B3D25 /* AddEmployeeFlow.swift in Sources */,
 				52F7259F29E86172000B3D25 /* Store.swift in Sources */,
@@ -283,6 +292,7 @@
 				52F7259929E860C5000B3D25 /* Connector.swift in Sources */,
 				5212909D29E8559900899D74 /* AddEmployeeView.swift in Sources */,
 				52F7259D29E86140000B3D25 /* EnvironmentStore.swift in Sources */,
+				52F725C229E9B39E000B3D25 /* EmployeesPersistanceOperator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,7 +423,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"EmployeeList/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = EmployeeList/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -441,7 +451,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"EmployeeList/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = EmployeeList/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

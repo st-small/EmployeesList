@@ -1,6 +1,6 @@
 import Foundation
 
-public struct Employee {
+public struct Employee: Equatable, Codable {
     let id: UUID
     let firstName: String
     let lastName: String

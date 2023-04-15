@@ -10,4 +10,6 @@ public enum Action {
     
     case didAddEmployee(Employee)
     case didTapShowAddEmployeeForm(Bool)
+    
+    case restoreStoredEmployees([Employee])
 }

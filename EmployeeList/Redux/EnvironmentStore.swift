@@ -24,13 +24,13 @@ final class EnvironmentStore: ObservableObject {
     }
 
     func bind(_ action: Action) -> Command {
-        return {
+        Command {
             self.dispatch(action)
         }
     }
     
     func bind<T>(_ action: @escaping (T) -> Action) -> CommandWith<T> {
-        return { value in
+        CommandWith { value in
             self.dispatch(action(value))
         }
     }

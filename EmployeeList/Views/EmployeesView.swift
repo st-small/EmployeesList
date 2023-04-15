@@ -6,7 +6,7 @@ struct EmployeesViewConnector: Connector {
             sections: state.allEmployees.sections,
             showAddEmployeeForm: Binding(
                 get: { state.addEmployeeFlow == .loginForm },
-                set: store.bind(Action.didTapShowAddEmployeeForm)),
+                set: { store.dispatch(Action.didTapShowAddEmployeeForm($0)) }),
             addEmployeeModal: { AddEmployeeConnector() },
             employeeRow: { EmployeeRowConnector(id: $0) }
         )
