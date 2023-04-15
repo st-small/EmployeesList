@@ -12,4 +12,7 @@ public enum Action {
     case didTapShowAddEmployeeForm(Bool)
     
     case restoreStoredEmployees([Employee])
+    
+    case updateSearchQuery(String, [Employee])
+    case clearSearchQuery
 }

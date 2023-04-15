@@ -29,6 +29,8 @@
 		52F725C029E99095000B3D25 /* EmployeeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F725BF29E99095000B3D25 /* EmployeeRow.swift */; };
 		52F725C229E9B39E000B3D25 /* EmployeesPersistanceOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F725C129E9B39E000B3D25 /* EmployeesPersistanceOperator.swift */; };
 		52F725C529EADE3D000B3D25 /* Department.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F725C429EADE3D000B3D25 /* Department.swift */; };
+		52F725C929EADF6D000B3D25 /* Searchbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F725C829EADF6D000B3D25 /* Searchbar.swift */; };
+		52F725CB29EB057B000B3D25 /* SearchbarState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F725CA29EB057B000B3D25 /* SearchbarState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,8 @@
 		52F725C129E9B39E000B3D25 /* EmployeesPersistanceOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesPersistanceOperator.swift; sourceTree = "<group>"; };
 		52F725C329E9CFAE000B3D25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		52F725C429EADE3D000B3D25 /* Department.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Department.swift; sourceTree = "<group>"; };
+		52F725C829EADF6D000B3D25 /* Searchbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Searchbar.swift; sourceTree = "<group>"; };
+		52F725CA29EB057B000B3D25 /* SearchbarState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchbarState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +166,7 @@
 			children = (
 				52F725B929E98A89000B3D25 /* Add employee */,
 				52F725AD29E873A9000B3D25 /* EmployeesView.swift */,
+				52F725C829EADF6D000B3D25 /* Searchbar.swift */,
 				52F725BF29E99095000B3D25 /* EmployeeRow.swift */,
 			);
 			path = Views;
@@ -173,6 +178,7 @@
 				52F725B229E95931000B3D25 /* AddEmployeeFlow.swift */,
 				52F725A929E867C5000B3D25 /* AddEmployeeForm.swift */,
 				52F725BD29E98DA6000B3D25 /* AllEmployees.swift */,
+				52F725CA29EB057B000B3D25 /* SearchbarState.swift */,
 			);
 			path = States;
 			sourceTree = "<group>";
@@ -282,8 +288,10 @@
 				52F725A829E86776000B3D25 /* Command.swift in Sources */,
 				52F725C529EADE3D000B3D25 /* Department.swift in Sources */,
 				5212908F29E84F5F00899D74 /* EmployeeListApp.swift in Sources */,
+				52F725CB29EB057B000B3D25 /* SearchbarState.swift in Sources */,
 				52F725B329E95931000B3D25 /* AddEmployeeFlow.swift in Sources */,
 				52F7259F29E86172000B3D25 /* Store.swift in Sources */,
+				52F725C929EADF6D000B3D25 /* Searchbar.swift in Sources */,
 				52F725BC29E98D81000B3D25 /* Employee.swift in Sources */,
 				52F725BE29E98DA6000B3D25 /* AllEmployees.swift in Sources */,
 				52F725B829E98A6F000B3D25 /* AddEmployeeConnector.swift in Sources */,

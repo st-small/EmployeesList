@@ -2,18 +2,21 @@ import SwiftUI
 
 struct EmployeesViewConnector: Connector {
     func map(state: AppState, store: EnvironmentStore) -> some View {
-        EmployeesView(
-            sections: state.allEmployees.sections,
+        let isSearch = state.searchResults.query.isNotEmpty
+        let sections = isSearch ? [state.searchResults.filteredEmployees] : state.allEmployees.sections
+        return EmployeesView(
+            sections: sections,
             showAddEmployeeForm: Binding(
                 get: { state.addEmployeeFlow == .loginForm },
                 set: { store.dispatch(Action.didTapShowAddEmployeeForm($0)) }),
             addEmployeeModal: { AddEmployeeConnector() },
-            employeeRow: { EmployeeRowConnector(id: $0) }
+            employeeRow: { EmployeeRowConnector(id: $0) },
+            searchbar: { SearchbarConnector() }
         )
     }
 }
 
-struct EmployeesView<Modal: View, EmployeeRow: View>: View {
+struct EmployeesView<Modal: View, EmployeeRow: View, Searchbar: View>: View {
     
     // MARK: - Props
     let sections: [Department]
@@ -21,35 +24,40 @@ struct EmployeesView<Modal: View, EmployeeRow: View>: View {
     
     let addEmployeeModal: () -> Modal
     let employeeRow: (UUID) -> EmployeeRow
+    let searchbar: () -> Searchbar
     
     var body: some View {
         ZStack {
             Text("Employees list is empty")
-                .foregroundColor(Color.black.opacity(sections.isEmpty ? 1 : 0))
+                .foregroundColor(Color.black)
             
-            List(sections) { section in
-                Section {
-                    ForEach(section.workers, id: \.self) { workerId in
-                        employeeRow(workerId)
-                    }
-                } header: {
-                    HStack {
-                        Text(section.title)
-                        
-                        Spacer()
-                        
-                        Button {
-                            
-                        } label: {
-                            Image(systemName: "info.circle")
-                                .font(.body)
+            List {
+                
+                searchbar()
+                
+                ForEach(sections) { section in
+                    Section {
+                        ForEach(section.workers, id: \.self) { workerId in
+                            employeeRow(workerId)
                         }
+                    } header: {
+                        HStack {
+                            Text(section.title)
+                            
+                            Spacer()
+                            
+                            Button {
+                                
+                            } label: {
+                                Image(systemName: "info.circle")
+                                    .font(.body)
+                            }
+                        }
+                        .foregroundColor(Color.primary.opacity(0.5))
                     }
-                    .foregroundColor(Color.primary.opacity(0.5))
                 }
             }
-            .listStyle(.automatic)
-            .opacity(sections.isEmpty ? 0 : 1)
+            .listStyle(.grouped)
         }
             .toolbar {
                 Button {
@@ -75,7 +83,8 @@ struct EmployeesView_Previews: PreviewProvider {
             ],
             showAddEmployeeForm: .constant(false),
             addEmployeeModal: { AddEmployeeView_Previews.previews },
-            employeeRow: { _ in EmployeeRow_Previews.previews }
+            employeeRow: { _ in EmployeeRow_Previews.previews },
+            searchbar: { Searchbar_Previews.previews }
         )
     }
 }
