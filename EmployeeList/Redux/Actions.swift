@@ -15,4 +15,7 @@ public enum Action {
     
     case updateSearchQuery(String, [Employee])
     case clearSearchQuery
+    
+    case showInfoAlert(Department)
+    case hideInfoAlert
 }

@@ -35,4 +35,27 @@ public struct AllEmployees {
             .map { Department(title: $0.key, workers: $0.value.map({ $0.id })) }
             .sorted(by: { $0.title < $1.title })
     }
+    
+    public func sectionByTitle(_ title: String) -> Department? {
+        sections.first(where: { $0.title.lowercased() == title.lowercased() })
+    }
+    
+    public func sectionDescription(_ title: String) -> String {
+        guard let section = sectionByTitle(title) else { return "" }
+        
+        let workers = byId.filter { section.workers.contains($0.key) }.map { $0.value }
+        var resultString = "Department info:\nThere "
+        
+        if workers.count == 1 {
+            resultString.append("is 1 worker\n")
+        } else {
+            resultString.append("are \(workers.count) workers\n")
+        }
+        
+        
+        let averageSalary = Int(workers.reduce(0) { $0 + $1.salary } / workers.count)
+        resultString.append("Average salary is $\(averageSalary)")
+        
+        return resultString
+    }
 }
